@@ -98,5 +98,18 @@ $route['emergencyTeamEdit'] = 'navy/submarine/emergencyTeamEdit';
 
 $route['emergencyWorkList'] = 'navy/submarine/getEmergencyWorkList';
 
+
+$route['emergencyTeamObj'] = 'navy/EmergencyTeam/getEmergencyObjList';
+$route['addEmergencyTeam'] = 'navy/EmergencyTeam/addEmergencyTeam';
+$route['saveEmergencyTeam'] = 'navy/EmergencyTeam/saveEmergencyTeam';
+$route['editEmergencyTeam'] = 'navy/EmergencyTeam/editEmergencyTeam';
+$route['updateEmergencyTeam'] = 'navy/EmergencyTeam/updateEmergencyTeam';
+
+$route['doseHistoryObj'] = 'navy/DoseHistory/getDoseHistoryObjList';
+$route['addDoseHistory'] = 'navy/DoseHistory/addDoseHistory';
+$route['saveDoseHistory'] = 'navy/DoseHistory/saveDoseHistory';
+$route['editDoseHistory'] = 'navy/DoseHistory/editDoseHistory';
+$route['updateDoseHistory'] = 'navy/DoseHistory/updateDoseHistory';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -160,6 +160,19 @@
                 <span class="title">Emergency Work Data </span>
               </a>
         </li>
+
+        <li class="nav-item <?php echo main_menu_active("EmergencyTeam",array("getEmergencyObjList")); ?>" >
+              <a href="<?php echo base_url('emergencyTeamObj'); ?>" class="nav-link">
+               <i class="fa fa-users"></i>
+                <span class="title">Emergency Team </span>
+              </a>
+        </li>
+        <li class="nav-item <?php echo main_menu_active("DoseHistory",array("getDoseHistoryObjList")); ?>" >
+              <a href="<?php echo base_url('doseHistoryObj'); ?>" class="nav-link">
+               <i class="fa fa-users"></i>
+                <span class="title">Dose History</span>
+              </a>
+        </li>
    
 
        <!--  <li class="nav-item <?php //echo main_menu_active("Location",array("add_banners")); ?>" >
