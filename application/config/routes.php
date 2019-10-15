@@ -111,5 +111,11 @@ $route['saveDoseHistory'] = 'navy/DoseHistory/saveDoseHistory';
 $route['editDoseHistory'] = 'navy/DoseHistory/editDoseHistory';
 $route['updateDoseHistory'] = 'navy/DoseHistory/updateDoseHistory';
 
+$route['emergencyTaskObj'] = 'navy/EmergencyTask/getEmergencyTaskObjList';
+$route['addEmergencyTask'] = 'navy/EmergencyTask/addEmergencyTask';
+$route['saveEmergencyTask'] = 'navy/EmergencyTask/saveEmergencyTask';
+$route['editEmergencyTask'] = 'navy/EmergencyTask/editEmergencyTask';
+$route['updateEmergencyTask'] = 'navy/EmergencyTask/updateEmergencyTask';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

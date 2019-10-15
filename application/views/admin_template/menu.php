@@ -173,6 +173,13 @@
                 <span class="title">Dose History</span>
               </a>
         </li>
+
+        <li class="nav-item <?php echo main_menu_active("EmergencyTask",array("getEmergencyTaskObjList")); ?>" >
+              <a href="<?php echo base_url('emergencyTaskObj'); ?>" class="nav-link">
+               <i class="fa fa-users"></i>
+                <span class="title">Emergency Task </span>
+              </a>
+        </li>
    
 
        <!--  <li class="nav-item <?php //echo main_menu_active("Location",array("add_banners")); ?>" >
