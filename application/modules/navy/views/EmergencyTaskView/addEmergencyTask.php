@@ -31,6 +31,11 @@
             </label>
               <input type="text" class="form-control m-input m-input--air"  name="location"  id="location"  placeholder="Location">
           </div>
+          <div class="form-group col-sm-5">
+            <label for="username">Task
+            </label>
+              <input type="text" class="form-control m-input m-input--air"  name="task"  id="task"  placeholder="Task">
+          </div>
             <div class="form-group col-sm-5">
             <label for="username">Dispution
             </label>

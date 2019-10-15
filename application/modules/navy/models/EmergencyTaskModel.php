@@ -58,6 +58,7 @@ class EmergencyTaskModel extends CI_Model
         $data = array(
          'area' => $this->input->post("area"),
          'location' => $this->input->post("location"),
+         'task' => $this->input->post("task"),
          'dispution' => $this->input->post("dispution"),
          'date_time' => $this->input->post("date_time"),
          'time_for_micro' => $this->input->post("time_for_micro"),
@@ -91,6 +92,7 @@ class EmergencyTaskModel extends CI_Model
         $data = array(
          'area' => $this->input->post("area"),
          'location' => $this->input->post("location"),
+          'task' => $this->input->post("task"),
          'dispution' => $this->input->post("dispution"),
          'date_time' => $this->input->post("date_time"),
          'time_for_micro' => $this->input->post("time_for_micro"),

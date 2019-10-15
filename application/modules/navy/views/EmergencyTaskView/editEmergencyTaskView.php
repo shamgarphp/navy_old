@@ -30,6 +30,10 @@
                         <h5>Location</h5>
                          <input type="text" class="form-control m-input m-input--air"  name="location"  id="location"  placeholder="Location " value="<?php echo ucfirst($emergencyTask['location'])?>">
                       </div>
+                      <div class="col-md-5">
+                        <h5>Location</h5>
+                         <input type="text" class="form-control m-input m-input--air"  name="task"  id="task"  placeholder="Task " value="<?php echo ucfirst($emergencyTask['task'])?>">
+                      </div>
 
 
                       <div class="col-md-5">
