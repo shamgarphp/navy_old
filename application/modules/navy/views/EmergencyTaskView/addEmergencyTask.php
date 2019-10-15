@@ -37,7 +37,7 @@
               <input type="text" class="form-control m-input m-input--air"  name="task"  id="task"  placeholder="Task">
           </div>
             <div class="form-group col-sm-5">
-            <label for="username">Dispution
+            <label for="username">Description
             </label>
               <input type="text" class="form-control m-input m-input--air"  name="dispution"  id="dispution"  placeholder="Dispution">
           </div>
@@ -47,20 +47,26 @@
               <input type="date" class="form-control m-input m-input--air"  name="date_time"  id="date_time"  placeholder="Date And Time">
           </div>
            <div class="form-group col-sm-5">
-            <label for="username">Time For Micro
+            <label for="username">Time For 20Ms 
             </label>
             
               <input type="text" class="form-control m-input m-input--air"  name="time_for_micro"  id="time_for_micro"  placeholder="Time For Micro">
            
           </div>
           <div class="form-group col-sm-5">
-            <label for="username">Time For 10M
+            <label for="username">Time For 100Ms
             </label>
               <input type="date" class="form-control m-input m-input--air"  name="time_10m"  id="time_10m"  placeholder="Time For Micro">
           </div>
 
+           <div class="form-group col-sm-5">
+            <label for="username">Expected Dose
+            </label>
+              <input type="text" class="form-control m-input m-input--air"  name="expected_dose"  id="expected_dose"  placeholder="Expected Dose">
+          </div>
+
           <div class="form-group col-sm-5">
-            <label for="username">Expection Time
+            <label for="username">Expected Time of Stay 
             </label>
               <input type="text" class="form-control m-input m-input--air"  name="expection_time"  id="expection_time"  placeholder="Expection Time">
           </div>

@@ -37,7 +37,7 @@
 
 
                       <div class="col-md-5">
-                        <h5>Dispution</h5>
+                        <h5>Description</h5>
                          <input type="text" class="form-control m-input m-input--air"  name="dispution"  id="dispution"  placeholder="Dispution" value="<?php echo ucfirst($emergencyTask['dispution'])?>">
                       </div>
 
@@ -47,15 +47,19 @@
                       </div>
 
                        <div class="col-md-5">
-                        <h5>Expection Time</h5>
+                        <h5>Expected Time of Stay </h5>
                          <input type="text" class="form-control m-input m-input--air"  name="expection_time"  id="expection_time"  placeholder="Expection Time" value="<?php echo ucfirst($emergencyTask['expection_time'])?>">
                       </div>
                       <div class="col-md-5">
-                        <h5>Time For Micro</h5>
+                        <h5>Expected Dose </h5>
+                         <input type="text" class="form-control m-input m-input--air"  name="expected_dose"  id="expected_dose"  placeholder="Expected Dose Time" value="<?php echo ucfirst($emergencyTask['expected_dose'])?>">
+                      </div>
+                      <div class="col-md-5">
+                        <h5>Time For 20Ms</h5>
                          <input type="text" class="form-control m-input m-input--air"  name="time_for_micro"  id="time_for_micro"  placeholder="Time For Micro" value="<?php echo ucfirst($emergencyTask['time_for_micro'])?>">
                       </div>
                       <div class="col-md-5">
-                        <h5>Time For 10M</h5>
+                        <h5>Time For 100Ms</h5>
                          <input type="date" class="form-control m-input m-input--air"  name="time_10m"  id="time_10m"  placeholder="Time For 10M" value="<?php echo ucfirst($emergencyTask['time_10m'])?>">
                       </div>
 

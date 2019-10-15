@@ -63,6 +63,7 @@ class EmergencyTaskModel extends CI_Model
          'date_time' => $this->input->post("date_time"),
          'time_for_micro' => $this->input->post("time_for_micro"),
          'time_10m' => $this->input->post("time_10m"),
+          'expected_dose' => $this->input->post("expected_dose"),
          'expection_time' => $this->input->post("expection_time")
         );
 
@@ -97,6 +98,7 @@ class EmergencyTaskModel extends CI_Model
          'date_time' => $this->input->post("date_time"),
          'time_for_micro' => $this->input->post("time_for_micro"),
          'time_10m' => $this->input->post("time_10m"),
+         'expected_dose' => $this->input->post("expected_dose"),
          'expection_time' => $this->input->post("expection_time")
         );
 
