@@ -25,6 +25,11 @@
                        <h5>P-ID</h5>
                         <input type="text" class="form-control m-input m-input--air"  name="p_id"  id="p_id"  placeholder="P-ID" value="<?php echo ucfirst($doseHistory['p_id'])?>">
                       </div>
+
+                      <div class="col-md-5">
+                       <h5>Name</h5>
+                        <input type="text" class="form-control m-input m-input--air"  name="name"  id="name"  placeholder="Name" value="<?php echo ucfirst($doseHistory['name'])?>">
+                      </div>
                     
                       <div class="col-md-5">
                         <h5>Dose History </h5>

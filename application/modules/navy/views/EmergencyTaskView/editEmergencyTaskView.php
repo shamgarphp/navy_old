@@ -60,7 +60,7 @@
                       </div>
                       <div class="col-md-5">
                         <h5>Time For 100Ms</h5>
-                         <input type="date" class="form-control m-input m-input--air"  name="time_10m"  id="time_10m"  placeholder="Time For 10M" value="<?php echo ucfirst($emergencyTask['time_10m'])?>">
+                         <input type="datetime" class="form-control m-input m-input--air"  name="time_10m"  id="time_10m"  placeholder="Time For 10M" value="<?php echo ucfirst($emergencyTask['time_10m'])?>">
                       </div>
 
                 </div><br>

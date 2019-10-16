@@ -7,6 +7,7 @@ class EmergencyTeam extends MX_Controller
         parent::__construct();
        
         $this->load->model('EmergencyTeamModel');
+        $this->load->model('DoseHistoryModel');
         modules::run('admin/admin/is_logged_in');
         $this->load->library('upload');
     }
@@ -105,6 +106,7 @@ class EmergencyTeam extends MX_Controller
     public function editEmergencyTeam(){
 
       $emtId = $_GET['emtId'];
+      $data['doseHistoryObj']   =  $this->DoseHistoryModel->getDoseHistoryObjList();
       $data['emergencyObj'] =  $this->EmergencyTeamModel->getEmergencyTeamById($emtId);
       $data['file']        = 'navy/EmergencyTeamView/editEmergencyTeamView';
       $data['validation_js']  = 'admin/all_common_js/frontend_validation_js';
@@ -117,6 +119,33 @@ class EmergencyTeam extends MX_Controller
       $result = $this->EmergencyTeamModel->updateEmergencyTeam($emtId);
       redirect('emergencyTeamObj');
     }
+
+
+
+     public function addMember()
+    { 
+        if (isset($_GET['emtId']) && !empty($_GET['emtId'])) 
+        {
+            $emtId    = $_GET['emtId'];
+            $data['doseHistoryObj']   =  $this->DoseHistoryModel->getDoseHistoryObjByEmtid($emtId);
+            $data['file']        = 'navy/EmergencyTeamView/addMember';
+            $this->load->view('admin_template/main',$data);
+        }
+           
+    } 
+
+
+     public function saveMember()
+    { 
+        if (isset($_GET['emtId']) && !empty($_GET['emtId'])) 
+        {
+            $data['emtId']    = $_GET['emtId'];echo "string".$_GET['emtId'];die();
+            $data['doseHistoryObj']   =  $this->DoseHistoryModel->getDoseHistoryObjList();
+            $data['file']        = 'navy/EmergencyTeamView/addMember';
+            $this->load->view('admin_template/main',$data);
+        }
+           
+    } 
 
 
 

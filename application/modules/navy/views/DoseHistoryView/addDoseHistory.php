@@ -26,6 +26,13 @@
               <input type="text" class="form-control m-input m-input--air"  name="p_id"  id="p_id"  placeholder="P-ID">
             </div>
           </div>
+          <div class="form-group col-sm-12">
+            <label for="username">Name
+            </label>
+            <div class="col-md-5">
+              <input type="text" class="form-control m-input m-input--air"  name="name"  id="name"  placeholder="Name">
+            </div>
+          </div>
             <div class="form-group col-sm-12">
             <label for="username">Dose History
             </label>

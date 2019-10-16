@@ -36,43 +36,49 @@
                   </th>
                   <th>S.no</th>
                   <th>P-Id</th>
-                  <th>Name</th>
                   <th>Dose History</th>
                   <th>ET-Id</th>
-                  <th>Actions</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
-                <?php if(isset($doseHistoryObj) && !empty($doseHistoryObj)){?>
+              <?php if(isset($doseHistoryObj) && !empty($doseHistoryObj)){?>
                 <?php $i = 1; foreach($doseHistoryObj as $doseHistory){?>
                 <tr class="odd gradeX" >
-
+                  <td style="display: none">
+                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                      <input type="checkbox" class="checkboxes" value="1" />
+                      <span>
+                      </span>
+                    </label>
+                  </td> 
                   <td> <?php echo $i++; ?> </td>
                   <td><?php if(!empty($doseHistory['p_id'])) { echo ucfirst($doseHistory['p_id']); } else { echo '---'; }?></td>
-                  <td><?php if(!empty($doseHistory['name']) && !empty($doseHistory['name'])) { echo $doseHistory['name']; } else { echo '---'; }?></td>
                    <td><?php if(!empty($doseHistory['dose_history'])) { echo $doseHistory['dose_history']; } else { echo '---'; }?></td>
                   <td><?php if(!empty($doseHistory['et_id']) && !empty($doseHistory['et_id'])) { echo $doseHistory['et_id']; } else { echo '---'; }?></td>
                   
                   <td>
                     <div class="btn-group">
-                      <button class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Actions
+                    <!--   <button class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Actions
                         <i class="fa fa-angle-down">
                         </i>
-                      </button>
-                      <ul class="dropdown-menu pull-left" role="menu">
-                      <li>
-                          <a href="<?php echo base_url('navy/DoseHistory/editDoseHistory?doseId='.$doseHistory['id']);?>">
+                      </button> -->
+                     <!--  <ul class="dropdown-menu pull-left" role="menu"> -->
+                     <!--  <li>
+                          <a href="<?php echo base_url('navy/EmergencyTeam/saveMember?doseId='.$doseHistory['id'].'&emtId='.$emtId);?>">
                             <i class="icon-tag">
-                            </i> Edit 
+                            </i> Add 
                           </a>
-                        </li>
+                        </li> -->
                         
-                        <li>
+                        <!-- <li>
                           <a href="<?php echo base_url('navy/DoseHistory/deleteDoseHistory?doseId='.$doseHistory['id']);?>" onclick="return confirm('Are You Sure');">
                             <i class="fa fa-trash-o" aria-hidden="true"></i>Delete 
                           </a>
-                        </li> 
-                       
+                        </li>  -->
+                       <a href="<?php echo base_url('navy/DoseHistory/deleteDoseHistory?doseId='.$doseHistory['id']);?>" onclick="return confirm('Are You Sure');">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>Delete 
+                          </a>
                                                
                 </tr> 
                 <?php }  } else { ?>                                

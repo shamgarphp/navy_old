@@ -46,6 +46,26 @@
                         <h5>Strength</h5>
                          <input type="text" class="form-control m-input m-input--air"  name="strength"  id="strength"  placeholder="Strength" value="<?php echo ucfirst($emergency['strength'])?>">
                       </div>
+                      <div class="col-md-5">
+                          <div class="table-repsonsive">
+                            <span id="error"></span>
+                            <table class="table table-bordered" id="item_table">
+                            <thead>
+                              <tr>
+                               <th>Add Member</th>                               
+                               <th style="width: 10px;"><button type="button" id="add_row" class="btn btn-success btn-sm addDay"><span class="glyphicon glyphicon-plus"></span></button></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr id="row_1">                                
+                              <td>
+                                <input type="text" name="name[]" id="name_1" class="form-control">
+                              </td>                                
+                              </tr>
+                            </tbody>
+                            </table>
+                            </div>
+                      </div>
 
                 </div><br>
           <?php } ?>
@@ -65,3 +85,33 @@
 </div>
 <!-- END CONTENT BODY -->
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+      $(document).ready(function(){
+        // Add new row in the table 
+    $("#add_row").unbind('click').bind('click', function() {
+      var table = $("#item_table");
+      var count_table_tbody_tr = $("#item_table tbody tr").length;
+      var row_id = count_table_tbody_tr + 1;
+
+      // console.log(reponse.x);
+               var html = '<tr id="row_'+row_id+'">'+
+                    '</td>'+ 
+                    '<td><input type="text" name="name[]" id="name_'+row_id+'" class="form-control"></td>'+                    
+
+                    '<td><button type="button" name="remove" class="btn btn-danger btn-sm remove"><span class="glyphicon glyphicon-minus"></span></button></td>'
+                    '</tr>';
+
+                if(count_table_tbody_tr >= 1) {
+                $("#item_table tbody tr:last").after(html);  
+              }
+              else {
+                $("#item_table tbody").html(html);
+              }
+          });
+
+        $(document).on('click', '.remove', function(){
+              $(this).closest('tr').remove();
+          });
+        });
+</script>

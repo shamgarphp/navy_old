@@ -58,6 +58,7 @@ class DoseHistoryModel extends CI_Model
     { 
         $data = array(
          'p_id' => $this->input->post("p_id"),
+         'name' => $this->input->post("name"),
          'dose_history' => $this->input->post("dose_history"),
          'et_id' => $this->input->post("et_id")
         );
@@ -87,6 +88,7 @@ class DoseHistoryModel extends CI_Model
 
         $data = array(
          'p_id' => $this->input->post("p_id"),
+         'name' => $this->input->post("name"),
          'dose_history' => $this->input->post("dose_history"),
          'et_id' => $this->input->post("et_id")
         );
@@ -96,4 +98,20 @@ class DoseHistoryModel extends CI_Model
        
     }
 
+
+    public function getDoseHistoryObjByEmtid($emtId){
+        $this->db->select('*');
+        $this->db->from('dose_history dh');
+        $this->db->where('et_id = '.$emtId);
+       
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) 
+        {
+            return $query->result_array();
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
 }

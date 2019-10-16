@@ -22,7 +22,7 @@
              <a href="<?php echo base_url('addEmergencyTeam'); ?>" class="btn btn-success m-btn m-btn--custom m-btn--icon m-btn--air"
               ><i class="fas fa-plus"></i>Add Emergency Team</a>
           <div class="portlet-body">
-            <input id="myInput" type="text" placeholder="Search.." style="width: 555px;"><br><br>
+            <!-- <input id="myInput" type="text" placeholder="Search.." style="width: 555px;"><br><br> -->
             <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
               <thead>
                 <tr>
@@ -49,15 +49,15 @@
                 <?php if(isset($emergencyObj) && !empty($emergencyObj)){?>
                 <?php $i = 1; foreach($emergencyObj as $emergency){?>
                 <tr class="odd gradeX" >
-                <!--  
+                 
                   <td style="display: none">
                     <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
                       <input type="checkbox" class="checkboxes" value="1" />
                       <span>
                       </span>
                     </label>
-                  </td> -->
-
+                  </td>
+                  
                   <td> <?php echo $i++; ?> </td>
                   <td><?php if(!empty($emergency['et_id'])) { echo ucfirst($emergency['et_id']); } else { echo '---'; }?></td>
                    <td><?php if(!empty($emergency['et_name'])) { echo $emergency['et_name']; } else { echo '---'; }?></td>
@@ -84,6 +84,18 @@
                             <i class="fa fa-trash-o" aria-hidden="true"></i>Delete 
                           </a>
                         </li> 
+
+                        <li>
+                          <a href="<?php echo base_url('navy/EmergencyTeam/addMember?emtId='.$emergency['id']);?>">
+                            <i class="icon-tag" aria-hidden="true"></i>Add Member 
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="<?php echo base_url('navy/EmergencyTeam/deleteEmergencyTeam?emtId='.$emergency['id']);?>">
+                            <i class="icon-tag" aria-hidden="true"></i>View Member 
+                          </a>
+                        </li>
                        
                                                
                 </tr> 
