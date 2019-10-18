@@ -65,6 +65,7 @@ class EmergencyTeamModel extends CI_Model
 
         $insert = $this->db->insert('emergency_team', $data);
         $task_id = $this->db->insert_id();
+        return $task_id;
 
     }  
 

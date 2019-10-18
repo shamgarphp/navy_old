@@ -17,7 +17,7 @@
         <!-- Ajax Starts-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
         <!-- Ajax Ends-->
 
     <script>
@@ -43,5 +43,32 @@
                     $('#location').html('<option value="">Select Location</option>');
                 }
             });
+
+            $('#member_1').change(function(){
+                var member_id = $('#member_1').val();
+                if(member_id != '')
+                {
+                    $.ajax({
+                        url:"<?php echo base_url(); ?>navy/DoseHistory/fetch_doseHistory",
+                        method:"GET",
+                        dataType: "json",
+                        data:{member_id:member_id},
+                        success:function(data)
+                        {
+                            // console.log(data['dose_history']);
+                            $('#dose_history_1').val(data['dose_history']);
+                            $('#et_id_1').val(data['et_id']);
+                            $('#p_id_1').val(data['p_id']);
+                        }
+                    });
+
+                }
+                // else
+                // {
+                //     $('#dose_history_1').html('<option value="">Select Member</option>');
+                // }
+            });
+
+
         });
     </script>
