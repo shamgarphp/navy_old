@@ -91,6 +91,7 @@ class EmergencyTask extends MX_Controller
     {   
       $data['file']        = 'navy/EmergencyTaskView/addEmergencyTask';
       $data['validation_js']  = 'admin/all_common_js/frontend_validation_js';
+      $data['area'] = $this->EmergencyTaskModel->fetch_area();
       $this->load->view('admin_template/main',$data);
     }
 
@@ -117,6 +118,14 @@ class EmergencyTask extends MX_Controller
       $result = $this->EmergencyTaskModel->updateEmergencyTask($emtId);
       redirect('emergencyTaskObj');
     }
+
+    function fetch_location()
+	{
+		if($_GET['area_id'])
+	 	{
+	   		echo $this->EmergencyTaskModel->fetch_location($_GET['area_id']);
+	  	}
+	}
 
 
 

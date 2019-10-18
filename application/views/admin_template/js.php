@@ -1,4 +1,3 @@
-      
         <script src="<?php echo admin_asset_url(); ?>global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="<?php echo admin_asset_url(); ?>global/plugins/js.cookie.min.js" type="text/javascript"></script>
         <script src="<?php echo admin_asset_url(); ?>global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
@@ -14,7 +13,35 @@
         <script src="<?php echo admin_asset_url(); ?>layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
         <script src="<?php echo admin_asset_url(); ?>layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
         <!-- END THEME LAYOUT SCRIPTS -->
-          		
-    </body>
 
-</html>
+        <!-- Ajax Starts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!-- Ajax Ends-->
+
+    <script>
+        $(document).ready(function(){
+            $('#area').change(function(){
+                var area_id = $('#area').val();
+                if(area_id != '')
+                {
+                    $.ajax({
+                        url:"<?php echo base_url(); ?>navy/EmergencyTask/fetch_location",
+                        method:"GET",
+                        data:{area_id:area_id},
+                        success:function(data)
+                        {
+                            console.log(data);
+                            $('#location').html(data);
+                        }
+                    });
+
+                }
+                else
+                {
+                    $('#location').html('<option value="">Select Location</option>');
+                }
+            });
+        });
+    </script>

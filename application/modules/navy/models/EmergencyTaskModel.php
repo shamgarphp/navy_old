@@ -107,4 +107,23 @@ class EmergencyTaskModel extends CI_Model
        
     }
 
+    public function fetch_area(){
+        $this->db->order_by("name", "ASC");
+        $query = $this->db->get("area");
+        return $query->result();
+    }
+
+    function fetch_location($area_id)
+    {
+        $this->db->where('area_id', $area_id);
+        $this->db->order_by('name', 'ASC');
+        $query = $this->db->get('location');
+        $output = '<option value="">Select Location</option>';
+        foreach($query->result() as $row)
+        {
+            $output .= '<option value="'.$row->id.'">'.$row->name.'</option>';
+        }
+        return $output;
+ }
+
 }

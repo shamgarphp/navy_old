@@ -1,3 +1,7 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 <div class="page-content-wrapper">
   <!-- BEGIN CONTENT BODY -->
   <div class="page-content">
@@ -20,16 +24,24 @@
          <form class="m-form m-form--fit m-form--label-align-right" name="insert_form" id="insert_form" method="POST" action="<?php echo base_url('saveEmergencyTask'); ?>">
         <div class="row">
           <div class="form-group col-sm-5">
-            <label for="username">Area
-            </label>
-           
-              <input type="text" class="form-control m-input m-input--air"  name="area"  id="area"  placeholder="Area">
+            <label for="username">Area</label>
+              <select name="area" id="area" class="form-control input-lg">
+                <option value="">Select Area</option>
+                <?php
+                foreach($area as $row)
+                {
+                 echo '<option value="'.$row->id.'">'.$row->name.'</option>';
+                }
+                ?>
+              </select>
            
           </div>
             <div class="form-group col-sm-5">
             <label for="username">Location
             </label>
-              <input type="text" class="form-control m-input m-input--air"  name="location"  id="location"  placeholder="Location">
+              <select name="location" id="location" class="form-control input-lg">
+                <option value="">Select Location</option>
+              </select>
           </div>
           <div class="form-group col-sm-5">
             <label for="username">Task
