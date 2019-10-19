@@ -44,31 +44,52 @@
                 }
             });
 
-            $('#member_1').change(function(){
-                var member_id = $('#member_1').val();
-                if(member_id != '')
-                {
-                    $.ajax({
-                        url:"<?php echo base_url(); ?>navy/DoseHistory/fetch_doseHistory",
-                        method:"GET",
-                        dataType: "json",
-                        data:{member_id:member_id},
-                        success:function(data)
-                        {
-                            // console.log(data['dose_history']);
-                            $('#dose_history_1').val(data['dose_history']);
-                            $('#et_id_1').val(data['et_id']);
-                            $('#p_id_1').val(data['p_id']);
-                        }
-                    });
+            // $('#member_1').change(function(){
+            //     var member_id = $('#member_1').val();
+            //     if(member_id != '')
+            //     {
+            //         $.ajax({
+            //             url:"<?php //echo base_url(); ?>navy/DoseHistory/fetch_doseHistory",
+            //             method:"GET",
+            //             dataType: "json",
+            //             data:{member_id:member_id},
+            //             success:function(data)
+            //             {
+            //                 // console.log(data['dose_history']);
+            //                 $('#dose_history_1').val(data['dose_history']);
+            //                 $('#et_id_1').val(data['et_id']);
+            //                 $('#p_id_1').val(data['p_id']);
+            //             }
+            //         });
 
-                }
-                // else
-                // {
-                //     $('#dose_history_1').html('<option value="">Select Member</option>');
-                // }
-            });
+            //     }
+            //     // else
+            //     // {
+            //     //     $('#dose_history_1').html('<option value="">Select Member</option>');
+            //     // }
+            // });          
+    });
+    </script>
 
+    <script>
+        function myFunction(row_id) {
+          var member_id = $("#member_"+row_id).val();
+            if(member_id != '')
+            {
+                $.ajax({
+                    url:"<?php echo base_url(); ?>navy/DoseHistory/fetch_doseHistory",
+                    method:"GET",
+                    dataType: "json",
+                    data:{member_id:member_id},
+                    success:function(data)
+                    {
+                        // console.log(data['dose_history']);
+                        $("#dose_history_"+row_id).val(data['dose_history']);
+                        $("#et_id_"+row_id).val(data['et_id']);
+                        $("#p_id_"+row_id).val(data['p_id']);
+                    }
+                });
 
-        });
+            }
+        }
     </script>

@@ -66,7 +66,7 @@
                             <tbody>
                               <tr id="row_1">                                
                               <td>                                
-                                <select name="member_1" id="member_1" class="form-control">
+                                <select name="member[]" id="member_1" class="form-control" onchange="myFunction(1)">
                                   <option value="">Select Member</option>
                                     <?php foreach ($doseHistoryObj as $k => $v): ?>
                                     <option value="<?php echo $v['id'] ?>"><?php echo $v['name'] ?></option>
@@ -74,13 +74,13 @@
                               </select>
                               </td>
                               <td>
-                                <input type="text" name="dose_history_1" id="dose_history_1" class="form-control" disabled autocomplete="off">                                
+                                <input type="text" name="dose_history[]" id="dose_history_1" class="form-control" disabled autocomplete="off">                                
                               </td> 
                               <td>
-                                <input type="text" name="et_id_1" id="et_id_1" class="form-control" disabled autocomplete="off">                                
+                                <input type="text" name="et_id[]" id="et_id_1" class="form-control" disabled autocomplete="off">                                
                               </td>
                               <td>
-                                <input type="text" name="p_id_1" id="p_id_1" class="form-control" disabled autocomplete="off">                                
+                                <input type="text" name="p_id[]" id="p_id_1" class="form-control" disabled autocomplete="off">                                
                               </td>                               
                               </tr>
                             </tbody>
@@ -105,7 +105,8 @@
 </div>
 <!-- END CONTENT BODY -->
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
 <script type="text/javascript">
       $(document).ready(function(){
         // Add new row in the table 
@@ -115,12 +116,10 @@
       var count_table_tbody_tr = $("#item_table tbody tr").length;
       var row_id = count_table_tbody_tr + 1;
 
-      // console.log(reponse.x);
-               // console.log(reponse.x);
                var html = '<tr id="row_'+row_id+'">'+
                    
                     '<td>'+ 
-                      '<select class="form-control select_group product" data-row-id="'+row_id+'" id="member_'+row_id+'" name="member[]">'+
+                      '<select class="form-control select_group product" data-row-id="'+row_id+'" id="member_'+row_id+'" name="member[]" onchange="myFunction('+row_id+')">'+
                           '<option value="">Select</option>';
                         <?php foreach ($doseHistoryObj as $doseHistory) {?>
                           html += '<option value="<?php echo $doseHistory['id'];?>"><?php echo $doseHistory['name'];?></option>';
@@ -128,9 +127,9 @@
                         
                         html += '</select>'+
                       '</td>'+
-                      '<td><input type="text" name="dose_history[]" id="dose_history_'+row_id+'" class="form-control"></td>'+
-                      '<td><input type="text" name="et_id[]" id="et_id_'+row_id+'" class="form-control"></td>'+
-                      '<td><input type="text" name="p_id[]" id="p_id_'+row_id+'" class="form-control"></td>'+
+                      '<td><input type="text" name="dose_history[]" id="dose_history_'+row_id+'" class="form-control" disabled></td>'+
+                      '<td><input type="text" name="et_id[]" id="et_id_'+row_id+'" class="form-control" disabled></td>'+
+                      '<td><input type="text" name="p_id[]" id="p_id_'+row_id+'" class="form-control" disabled></td>'+
 
                     '<td><button type="button" name="remove" class="btn btn-danger btn-sm remove"><span class="glyphicon glyphicon-minus"></span></button></td>'
                     '</tr>';
@@ -146,6 +145,6 @@
         $(document).on('click', '.remove', function(){
               $(this).closest('tr').remove();
           });
-        });
+    });
 </script>
 
