@@ -92,4 +92,27 @@
 
             }
         }
+
+       
+    </script>
+    <script>
+     function emgTask(row_id) {
+          var member_id = $("#member_"+row_id).val();
+            if(member_id != '')
+            {
+                $.ajax({
+                    url:"<?php echo base_url(); ?>navy/EmergencyTeam/fetch_emgTeam",
+                    method:"GET",
+                    dataType: "json",
+                    data:{member_id:member_id},
+                    success:function(data)
+                    {
+                        $("#dose_history_"+row_id).val(5);
+                        $("#et_id_"+row_id).val(data['et_id']);
+                        
+                    }
+                });
+
+            }
+        }
     </script>

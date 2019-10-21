@@ -147,6 +147,14 @@ class EmergencyTeam extends MX_Controller
            
     } 
 
+    function fetch_emgTeam()
+    {
+        if($_GET['member_id'])
+        {
+            echo json_encode($this->EmergencyTeamModel->fetch_emgTeam($_GET['member_id']));
+        }
+    }
+
 
 
      

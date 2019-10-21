@@ -5,7 +5,7 @@ class EmergencyTask extends MX_Controller
     public function __construct()
     {
         parent::__construct();
-       
+        $this->load->model('EmergencyTeamModel');
         $this->load->model('EmergencyTaskModel');
         modules::run('admin/admin/is_logged_in');
         $this->load->library('upload');
@@ -106,6 +106,7 @@ class EmergencyTask extends MX_Controller
     public function editEmergencyTask(){
 
       $emtId = $_GET['emtId'];
+      $data['emergencyTeamObj']   =  $this->EmergencyTeamModel->getEmergencyObjList();
       $data['emergencyTaskObj'] =  $this->EmergencyTaskModel->getEmergencyTaskById($emtId);
       $data['file']        = 'navy/EmergencyTaskView/editEmergencyTaskView';
       $data['validation_js']  = 'admin/all_common_js/frontend_validation_js';
@@ -126,6 +127,8 @@ class EmergencyTask extends MX_Controller
 	   		echo $this->EmergencyTaskModel->fetch_location($_GET['area_id']);
 	  	}
 	}
+
+    
 
 
 

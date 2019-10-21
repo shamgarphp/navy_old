@@ -100,4 +100,32 @@ class EmergencyTeamModel extends CI_Model
        
     }
 
+     function fetch_emgTeam($member_id)
+    {
+        $this->db->where('id', $member_id);
+       // $this->db->order_by('name', 'ASC');
+        $query = $this->db->get('emergency_team');
+        foreach($query->result() as $row)
+        {   
+           // $output['dose_history'] = 5;//$row->dose_history;
+            $output['et_id'] = $row->et_id;
+           /* $dose = $this->fetch_doseHistory($row->et_id);
+           $output['dose_history'] = $dose;*/
+        }
+        return $output;
+    }
+
+     function fetch_doseHistory($member_id)
+    {
+        $this->db->where('id', $member_id);
+        $this->db->order_by('name', 'ASC');
+        $query = $this->db->get('dose_history');
+        foreach($query->result() as $row)
+        {
+            $output['dose_history'] = 88;
+           
+        }
+        return $output;
+    }
+
 }
