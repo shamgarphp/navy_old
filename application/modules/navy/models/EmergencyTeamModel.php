@@ -65,6 +65,7 @@ class EmergencyTeamModel extends CI_Model
 
         $insert = $this->db->insert('emergency_team', $data);
         $task_id = $this->db->insert_id();
+        return $task_id;
 
     }  
 
@@ -97,6 +98,34 @@ class EmergencyTeamModel extends CI_Model
         $this->db->where('id', $emtId);
         $update = $this->db->update('emergency_team', $data);
        
+    }
+
+     function fetch_emgTeam($member_id)
+    {
+        $this->db->where('id', $member_id);
+       // $this->db->order_by('name', 'ASC');
+        $query = $this->db->get('emergency_team');
+        foreach($query->result() as $row)
+        {   
+           // $output['dose_history'] = 5;//$row->dose_history;
+            $output['et_id'] = $row->et_id;
+           /* $dose = $this->fetch_doseHistory($row->et_id);
+           $output['dose_history'] = $dose;*/
+        }
+        return $output;
+    }
+
+     function fetch_doseHistory($member_id)
+    {
+        $this->db->where('id', $member_id);
+        $this->db->order_by('name', 'ASC');
+        $query = $this->db->get('dose_history');
+        foreach($query->result() as $row)
+        {
+            $output['dose_history'] = 88;
+           
+        }
+        return $output;
     }
 
 }

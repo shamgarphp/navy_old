@@ -98,8 +98,8 @@ class EmergencyTeam extends MX_Controller
     public function saveEmergencyTeam(){
 
       if(isset($_POST['add_emergencyTeam']) && !empty($_POST['add_emergencyTeam'])){
-        $result = $this->EmergencyTeamModel->saveEmergencyTeam();
-        redirect('emergencyTeamObj');
+        $teamId = $this->EmergencyTeamModel->saveEmergencyTeam();
+        redirect('editEmergencyTeam?emtId='.$teamId);
       }
     }
 
@@ -146,6 +146,14 @@ class EmergencyTeam extends MX_Controller
         }
            
     } 
+
+    function fetch_emgTeam()
+    {
+        if($_GET['member_id'])
+        {
+            echo json_encode($this->EmergencyTeamModel->fetch_emgTeam($_GET['member_id']));
+        }
+    }
 
 
 

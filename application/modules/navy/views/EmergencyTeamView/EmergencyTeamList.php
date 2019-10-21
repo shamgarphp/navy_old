@@ -85,17 +85,17 @@
                           </a>
                         </li> 
 
-                        <li>
-                          <a href="<?php echo base_url('navy/EmergencyTeam/addMember?emtId='.$emergency['id']);?>">
+                <!--         <li>
+                          <a href="<?php// echo base_url('navy/EmergencyTeam/addMember?emtId='.$emergency['id']);?>">
                             <i class="icon-tag" aria-hidden="true"></i>Add Member 
                           </a>
                         </li>
 
                         <li>
-                          <a href="<?php echo base_url('navy/EmergencyTeam/deleteEmergencyTeam?emtId='.$emergency['id']);?>">
+                          <a href="<?php //echo base_url('navy/EmergencyTeam/deleteEmergencyTeam?emtId='.$emergency['id']);?>">
                             <i class="icon-tag" aria-hidden="true"></i>View Member 
                           </a>
-                        </li>
+                        </li> -->
                        
                                                
                 </tr> 

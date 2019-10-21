@@ -117,5 +117,27 @@ class DoseHistory extends MX_Controller
       redirect('doseHistoryObj');
     }
 
+    public function getTableMemberRow()
+    {
+        $members = $this->DoseHistoryModel->getActiveMemberData();
+        echo json_encode($members);
+    }
+
+    public function getMemberValueById()
+    {
+        $member = $this->input->post('member');
+        if($member) {
+            $member_data = $this->DoseHistoryModel->getMemberData($member);
+            echo json_encode($member_data);
+        }
+    }
+
+    function fetch_doseHistory()
+    {
+        if($_GET['member_id'])
+        {
+            echo json_encode($this->DoseHistoryModel->fetch_doseHistory($_GET['member_id']));
+        }
+    }
 
 }

@@ -114,4 +114,39 @@ class DoseHistoryModel extends CI_Model
             return FALSE;
         }
     }
+
+    public function getTableMemberRow()
+    {
+        $sql = "SELECT * FROM dose_history ";
+        $query = $this->db->query($sql, array(1));
+        return $query->result_array();
+    }
+
+    /* get the brand data */
+    public function getMemberData($id = null)
+    {
+        if($id) {
+            $sql = "SELECT * FROM dose_history where id = ?";
+            $query = $this->db->query($sql, array($id));
+            return $query->row_array();
+        }
+
+        $sql = "SELECT * FROM dose_history ORDER BY id DESC";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    function fetch_doseHistory($member_id)
+    {
+        $this->db->where('id', $member_id);
+        $this->db->order_by('name', 'ASC');
+        $query = $this->db->get('dose_history');
+        foreach($query->result() as $row)
+        {
+            $output['dose_history'] = $row->dose_history;
+            $output['et_id'] = $row->et_id;
+            $output['p_id'] = $row->p_id;
+        }
+        return $output;
+    }
 }
