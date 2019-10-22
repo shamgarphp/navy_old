@@ -96,8 +96,8 @@
        
     </script>
     <script>
-     function emgTask(row_id) {
-          var member_id = $("#member_"+row_id).val();
+     function emgTask() {
+          var member_id = $("#member").val();
             if(member_id != '')
             {
                 $.ajax({
@@ -107,8 +107,8 @@
                     data:{member_id:member_id},
                     success:function(data)
                     {
-                        $("#dose_history_"+row_id).val(5);
-                        $("#et_id_"+row_id).val(data['et_id']);
+                        //$("#dose_history").val(5);
+                        $("#et_id").val(data['et_id']);
                         
                     }
                 });
