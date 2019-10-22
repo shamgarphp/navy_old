@@ -106,7 +106,8 @@ class EmergencyTask extends MX_Controller
     public function editEmergencyTask(){
 
       $emtId = $_GET['emtId'];
-      $data['emergencyTeamObj']   =  $this->EmergencyTeamModel->getEmergencyObjList();
+      $data['emergencyTeamObj']   =  $this->EmergencyTeamModel->getall_team_dosh();
+     
       $data['emergencyTaskObj'] =  $this->EmergencyTaskModel->getEmergencyTaskById($emtId);
       $data['file']        = 'navy/EmergencyTaskView/editEmergencyTaskView';
       $data['validation_js']  = 'admin/all_common_js/frontend_validation_js';

@@ -108,6 +108,7 @@
                     success:function(data)
                     {
                         //$("#dose_history").val(5);
+                        //console.log(data['et_id']);
                         $("#et_id").val(data['et_id']);
                         
                     }

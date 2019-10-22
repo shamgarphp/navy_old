@@ -73,19 +73,22 @@
                               <tr>
                                <th>Team Name</th>
                                <!-- <th>Dose History</th> -->
-                               <th>ET Id</th>                           
+                              <!--  <th>ET Id</th>  -->                          
                                <th style="width: 10px;"><button type="button" id="add_row" class="btn btn-success btn-sm addDay"><span class="glyphicon glyphicon-plus"></span></button></th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr id="row_1">                                
                               <td>                                
-                                <select name="member" id="member" class="form-control" onchange="emgTask(1)">
+                                <select name="member" id="member" class="form-control" onchange="emgTask()">
+
                                   <option value="">Select Member</option>
-                                    <?php foreach ($emergencyTeamObj as $k => $v): ?>
-                                    
-                                    <option value="<?php echo $v['id'] ?>"><?php echo $v['et_name'] ?></option>
-                                  <?php endforeach ?>
+                                 
+                                  <?php 
+                                      foreach ($emergencyTeamObj as $key ) {?>
+                                          <option value="<?php echo $key['et_id'] ?>"><?php echo $key['name']."(". $key['dose_history'].")" ?></option>
+                          
+                               <?php  } ?>
                               </select>
                               </td>
                            <!--    <td>
