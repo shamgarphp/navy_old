@@ -130,7 +130,7 @@ class EmergencyTeamModel extends CI_Model
 
      public function  getall_team_dosh()
     {
-        $this->db->select('et.et_id,dh.dose_history,et.et_name as name');
+        $this->db->select('et.et_id,min(dh.dose_history) as dose_history,et.et_name as name');
         $this->db->from('emergency_team as et');
         $this->db->join('dose_history as dh','et.et_id = dh.et_id');
         $this->db->group_by('et.et_name');
